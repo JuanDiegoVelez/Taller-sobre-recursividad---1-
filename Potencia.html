@@ -8,6 +8,7 @@
 
     <body>
         <script>
+            // Se dibuja en el documento
             function texto(cadena){
                 document.write(cadena);
             }
@@ -16,18 +17,29 @@
                 document.write("<br />");
             }
 
+            // Se crea la función
             function potencia(n, exp){
+                // Si el exponente es 0 entonces el resultado sera 1
                 if (exp == 0){
                     return 1;
+
+                // De lo contrario se llama la misma función recursivamente para multiplicarse por el valor de número
                 } else{
                     return n * potencia(n, exp - 1);
                 }
             }
 
+            // Ingresar el número o la base
             let num = parseInt(prompt("Introduce un número: "));
+
+            // Ingresar el exponente
             let expt = parseInt(prompt("Introduce su exponente: "));
+
+            // Se escribe en el documento
             texto("Potencia del número " + num + " elevado a la " + expt);
             salto();
+
+            // Se llama a la funcion con los argumentos que el usuario introdujo
             texto("Resultado: " + potencia(num, expt));
         </script>   
     </body>
