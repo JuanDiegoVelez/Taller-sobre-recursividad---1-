@@ -5,6 +5,7 @@
     </head>
     <body>
         <script>
+            // Se escribe en el documento
             function texto(cadena){
                 document.write(cadena);
             }
@@ -13,18 +14,26 @@
                 document.write("<br />");
             }
 
+            // Se crea la función
             function factorial(n){
+
+                // Si el exponente es 0 entonces el resultado sera 1
                 if (n <= 1){
                     return 1;
+
+                // De lo contrario se llama la misma función recursivamente para multiplicarse por el valor de número, ademas se reduce el número en uno, esto para que cada vez se mulplique reducidamente, o sea fac(5) = 5 * 4, después es 4 * 3, sucesivamente hasta 1
                 } else{
                     return n * factorial(n - 1);
                 }
             }
 
+            // Dato del usuario
             let num = parseInt(prompt("Introduce un número: "));
 
             texto("Factorial de: " + num);
             salto();
+
+            // Se llama a la función
             texto("Resultado: " + factorial(num));
         </script>
     </body>
