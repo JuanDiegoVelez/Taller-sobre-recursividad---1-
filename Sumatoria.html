@@ -8,6 +8,8 @@
 
     <body>
         <script>
+
+            // Se escribe en el documento
             function texto(cadena){
                 document.write(cadena);
             }
@@ -16,18 +18,26 @@
                 document.write("<br />");
             }
 
+            // Se crea la función
             function sumatoria(n){
-                if (n <= 1){
-                    return 1;
+
+                // Si el número es menor a 1 entonces el resultado sera 0, ya que corresponden a negativos y solo queremos los numeros positivos.
+                if (n <= 0){
+                    return 0;
+
+                // De lo contrario se llama la misma función recursivamente para dumar de nuevo por el valor de número, ademas se reduce el número en uno, esto para que cada vez se sume reducidamente, o sea sumatoria(5) = 5 + 4, después es 9 + 3, 12 + 2, sucesivamente hasta 1, 14 + 1
                 } else{
                     return n + sumatoria(n - 1);
                 }
             }
 
+            // Dato del usuario
             let num = parseInt(prompt("Introduce un número: "));
 
             texto("Sumatoria de 1 hasta " + num);
             salto();
+
+            // Se llama a la función
             texto("Resultado: " + sumatoria(num));
         </script>   
     </body>
