@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Factorial</title>
+    </head>
+    <body>
+        <script>
+            function texto(cadena){
+                document.write(cadena);
+            }
+
+            function salto(){
+                document.write("<br />");
+            }
+
+            function factorial(n){
+                if (n <= 1){
+                    return 1;
+                } else{
+                    return n * factorial(n - 1);
+                }
+            }
+
+            let num = parseInt(prompt("Introduce un número: "));
+
+            texto("Factorial de: " + num);
+            salto();
+            texto("Resultado: " + factorial(num));
+        </script>
+    </body>
+</html>

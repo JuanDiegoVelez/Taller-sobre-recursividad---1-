@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sumatoria
+        </title>
+    </head>
+
+    <body>
+        <script>
+            function texto(cadena){
+                document.write(cadena);
+            }
+
+            function salto(){
+                document.write("<br />");
+            }
+
+            function sumatoria(n){
+                if (n <= 1){
+                    return 1;
+                } else{
+                    return n + sumatoria(n - 1);
+                }
+            }
+
+            let num = parseInt(prompt("Introduce un número: "));
+
+            texto("Sumatoria de 1 hasta " + num);
+            salto();
+            texto("Resultado: " + sumatoria(num));
+        </script>   
+    </body>
+</html>
