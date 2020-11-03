@@ -1,44 +1,31 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            Sumatoria
-        </title>
-    </head>
+// Se escribe en el documento
+function texto(cadena){
+  document.write(cadena);
+}
 
-    <body>
-        <script>
+function salto(){
+  document.write("<br />");
+}
 
-            // Se escribe en el documento
-            function texto(cadena){
-                document.write(cadena);
-            }
+// Se crea la función, elvalor de incio es el número donde comienza a contarse por ejemplo queremos que sea desde el uno , o comience en el 5.
+function sumatoria(inicio, hasta){
 
-            function salto(){
-                document.write("<br />");
-            }
+  // Si el número de inicio que es incrementado en uno en uno es igual o mayor que el limite introducido, el resultado sera el valor de inicio que contiene el valor de la la sumatoria total.
+  if (inicio >= hasta){
+    return inicio;
 
-            // Se crea la función
-            function sumatoria(n){
+  // De lo contrario se llama la misma función recursivamente para sumar de nuevo, ademas se aumenta el número de inicio.
+  } else{
+    return inicio + sumatoria(inicio+1, hasta);
+  }
+}
 
-                // Si el número es menor a 1 entonces el resultado sera 0, ya que corresponden a negativos y solo queremos los numeros positivos.
-                if (n <= 0){
-                    return 0;
+// Dato del usuario
+let inicio = parseInt(prompt("Introduce el número de inicio ejemplo(1): "));
+let hasta = parseInt(prompt("Introduce el número hasta donde se desea sumar: "));
 
-                // De lo contrario se llama la misma función recursivamente para dumar de nuevo por el valor de número, ademas se reduce el número en uno, esto para que cada vez se sume reducidamente, o sea sumatoria(5) = 5 + 4, después es 9 + 3, 12 + 2, sucesivamente hasta 1, 14 + 1
-                } else{
-                    return n + sumatoria(n - 1);
-                }
-            }
+texto("Sumatoria desde " + inicio + " hasta " + hasta);
+salto();
 
-            // Dato del usuario
-            let num = parseInt(prompt("Introduce un número: "));
-
-            texto("Sumatoria de 1 hasta " + num);
-            salto();
-
-            // Se llama a la función
-            texto("Resultado: " + sumatoria(num));
-        </script>   
-    </body>
-</html>
+// Se llama a la función
+texto("Resultado: " + sumatoria(inicio, hasta));
